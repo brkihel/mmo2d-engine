@@ -18,8 +18,7 @@ namespace Client
         public static MapStruct[] Maps = new MapStruct[MAX_MAPS];
 
         [Serializable]
-        public struct TileDataStruct
-        {
+        public struct TileDataStruct {
             public byte X;
             public byte Y;
             public byte Tileset;
@@ -27,8 +26,7 @@ namespace Client
         }
 
         [Serializable]
-        public struct TileStruct
-        {
+        public struct TileStruct {
             public TileDataStruct[] Layer;
             public byte Type;
             public int Data1;
@@ -38,8 +36,7 @@ namespace Client
         }
         
         [Serializable]
-        public struct MapStruct
-        {
+        public struct MapStruct {
             public string name;
             public byte maxX;
             public byte maxY;
@@ -48,8 +45,7 @@ namespace Client
         }
 
         [Serializable]
-        public enum LayerType
-        {
+        public enum LayerType {
             Ground = 1,
             Mask,
             Mask2,
@@ -58,23 +54,19 @@ namespace Client
             Count
         }
 
-        public static void checkMaps()
-        {
+        public static void checkMaps() {
             Console.WriteLine("Checando os mapas...");
             Array.Resize(ref Maps, MAX_MAPS);
 
-            for (i = 0; i < MAX_MAPS; i++)
-            {
-                if (| File.Exists(MAP_PATH + "map" + i + MAP_EXT))
-                {
+            for (int i = 0; i < MAX_MAPS; i++) {
+                if (!File.Exists(MAP_PATH + "map" + i + MAP_EXT)) {
                     ClearMap(i);
                     SaveMap(i);
                 }
             }
         }
 
-        public static void ClearMap(int mapNum)
-        {
+        public static void ClearMap(int mapNum) {
             int xx = 0;
             int yy = 0;
 
@@ -86,48 +78,42 @@ namespace Client
             var mapX = Maps[mapNum].Tile.GetLength(0);
             var mapY = Maps[mapNum].Tile.GetLength(1);
 
-            for(int x = 0; x < Maps[mapNum].maxX; x++)
-            {
-                mapX = x;
+            for(int X = 0; X < Maps[mapNum].maxX; X++) {
+                mapX = X;
             }
 
-            for (int y = 0; y < Maps[mapNum].maxY; y++)
+            for (int Y = 0; Y < Maps[mapNum].maxY; Y++)
             {
-                mapX = y;
+                mapY = Y;
             }
 
-            for(xx = 0; xx < Maps[mapNum].Tile.GetLength(0); xx++)
-            {
-                for(yy = 0; yy < Maps[mapNum].Tile.GetLength(0); yy++)
-                {
+            for(xx = 0; xx < Maps[mapNum].Tile.GetLength(0); xx++) {
+                for(yy = 0; yy < Maps[mapNum].Tile.GetLength(0); yy++){
                     //Preencher a Array com o tipo do Layer para cada tipo de Layer disponível
-                    Maps[mapNum].Tile[xx, yy].Layer = new TileDataStruct[(int)LayerType.Count - 1];
-                    Array.Resize(ref Maps[mapNum].Tile[xx, yy].Layer, (int)LayerType.Count - 1);
+                    Maps[mapNum].Tile[xx, yy].Layer = new TileDataStruct[(int)LayerType.Count -1];
+                    Array.Resize(ref Maps[mapNum].Tile[xx, yy].Layer, (int)LayerType.Count -1);
                     Maps[mapNum].Tile[xx, yy].Layer[1].Tileset = 2;
                 }
             }
         }
 
-        public static void SaveMap(int mapNum)
-        {
+        public static void SaveMap(int mapNum) {
             BinaryFormatter bf = new BinaryFormatter();
             FileStream fs = File.Open(MAP_PATH + "map" + mapNum + MAP_EXT, FileMode.OpenOrCreate);
             bf.Serialize(fs, Maps[mapNum]);
-            fs.Close;
+            fs.Close();
         }
 
-        public static void LoadMap(int mapNum)
-        {
+        public static void LoadMap(int mapNum) {
             BinaryFormatter bf = new BinaryFormatter();
             FileStream fs = File.Open(MAP_PATH + "map" + mapNum + MAP_EXT, FileMode.OpenOrCreate);
             Maps[mapNum] = (MapStruct)bf.Deserialize(fs);
-            fs.Close;
+            fs.Close();
         }
 
-        public static void LoadMaps()
-        {
+        public static void LoadMaps() {
             Console.WriteLine("Carregando os mapas...");
-            for (i = 0; i < MAX_MAPS; i++)
+            for (int i = 0; i < MAX_MAPS; i++)
             {
                 LoadMap(i);
             }

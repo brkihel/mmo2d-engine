@@ -32,7 +32,7 @@ namespace Client
                 gameWindow.DispatchEvents();
                 gameWindow.Clear(Color.Blue);
 
-                Graphic.renderGraphic();
+                Graphic.Render_Graphics();
 
                 gameWindow.Display();
             }

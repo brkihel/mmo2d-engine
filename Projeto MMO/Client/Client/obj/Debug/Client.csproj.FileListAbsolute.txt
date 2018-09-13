@@ -10,3 +10,15 @@ C:\Users\NOTEBOOK\Desktop\Projeto MMO\Client\Client\obj\Debug\Client.csproj.Core
 C:\Users\NOTEBOOK\Desktop\Projeto MMO\Client\Client\obj\Debug\Client.csproj.CopyComplete
 C:\Users\NOTEBOOK\Desktop\Projeto MMO\Client\Client\obj\Debug\Client.exe
 C:\Users\NOTEBOOK\Desktop\Projeto MMO\Client\Client\obj\Debug\Client.pdb
+C:\Users\BRENDA\Desktop\mmo2d-engine\Projeto MMO\Client\Client\obj\Debug\Client.csprojAssemblyReference.cache
+C:\Users\BRENDA\Desktop\mmo2d-engine\Projeto MMO\Client\Client\obj\Debug\Client.csproj.CoreCompileInputs.cache
+C:\Users\BRENDA\Desktop\mmo2d-engine\Projeto MMO\Client\Client\bin\Debug\Client.exe.config
+C:\Users\BRENDA\Desktop\mmo2d-engine\Projeto MMO\Client\Client\bin\Debug\Client.exe
+C:\Users\BRENDA\Desktop\mmo2d-engine\Projeto MMO\Client\Client\bin\Debug\Client.pdb
+C:\Users\BRENDA\Desktop\mmo2d-engine\Projeto MMO\Client\Client\bin\Debug\sfmlnet-audio-2.dll
+C:\Users\BRENDA\Desktop\mmo2d-engine\Projeto MMO\Client\Client\bin\Debug\sfmlnet-graphics-2.dll
+C:\Users\BRENDA\Desktop\mmo2d-engine\Projeto MMO\Client\Client\bin\Debug\sfmlnet-system-2.dll
+C:\Users\BRENDA\Desktop\mmo2d-engine\Projeto MMO\Client\Client\bin\Debug\sfmlnet-window-2.dll
+C:\Users\BRENDA\Desktop\mmo2d-engine\Projeto MMO\Client\Client\obj\Debug\Client.csproj.CopyComplete
+C:\Users\BRENDA\Desktop\mmo2d-engine\Projeto MMO\Client\Client\obj\Debug\Client.exe
+C:\Users\BRENDA\Desktop\mmo2d-engine\Projeto MMO\Client\Client\obj\Debug\Client.pdb
